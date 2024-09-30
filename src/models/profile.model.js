@@ -10,16 +10,16 @@ const ProfileSchema = new mongoose.Schema({
         type: String,
         maxlength: 500,
     },
-    profilePicture: {
+    picture: {
         type: String,
         default: 'default_profile_picture.png',
     },
     birthdate: {
         type: Date,
-        required: True,
+        required: true,
     }
 }, { timestamps: true });
 
 const Profile = mongoose.model('Profile', ProfileSchema);
 
-module.exports = Profile;
+module.exports = { Profile };
