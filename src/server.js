@@ -26,7 +26,7 @@ class Server {
     };
 
     routes() {
-        // this.app.use(this.paths.auth, require('./routes/auth.routes.js'));
+        this.app.use(this.paths.auth, require('./routes/auth.routes.js'));
         this.app.use(this.paths.main, require('./routes/main.routes'));
         // this.app.use(this.paths.profile, require('./routes/profile.routes.js'));
     };
