@@ -9,6 +9,8 @@ class Server {
             auth: '/api/auth',
             main: '/api/main',
             profile: '/api/profile',
+            posts: '/api/posts',
+            comments: '/api/comments',
         }
 
         this.middlewares();
@@ -28,7 +30,9 @@ class Server {
     routes() {
         this.app.use(this.paths.auth, require('./routes/auth.routes.js'));
         this.app.use(this.paths.main, require('./routes/main.routes'));
-        // this.app.use(this.paths.profile, require('./routes/profile.routes.js'));
+        this.app.use(this.paths.profile, require('./routes/profile.routes.js'));
+        this.app.use(this.paths.posts, require('./routes/post.routes.js'));
+        this.app.use(this.paths.comments, require('./routes/comment.routes.js'));
     };
 
     listen() {
